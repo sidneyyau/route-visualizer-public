@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>CC Dashboard</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=REDACTED&v=weekly&libraries=geometry,visualization"></script>
+    <script src="https://unpkg.com/@googlemaps/markerwithlabel/dist/index.min.js"></script>
+    <script lang="javascript" src="https://cdn.sheetjs.com/xlsx-0.18.10/package/dist/xlsx.mini.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <script type="module" src="./js/script.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div class="control-panel" id="control-panel">
+      <div class="mode-container">
+        <div id="mode-flat" class="mode-selector" onclick="setMode(1)">
+         <span>Flat</span>
+        </div>
+        <div id="mode-peak" class="mode-selector" onclick="setMode(2)">
+          <span>CC</span>
+        </div>
+        <!-- <div id="mode-free" class="mode-selector" onclick="setMode(0)">
+          <span>Free</span>
+        </div> -->
+      </div>
+      <br />
+      <div class="tunnel-toll-container"id="tunnel-toll-container">
+        <div class="tunnel-icon-container">
+          <img class="tunnel-icon" src="./asset/WHC.svg" alt="Western Harbour Crossing" />
+          <img class="tunnel-icon" src="./asset/CHT.svg" alt="Cross Harbour Tunnel" />
+          <img class="tunnel-icon" src="./asset/EHC.svg" alt="Eastern Harbour Crossing" />
+        </div>
+        <div class="default-toll-heading" id="default-toll-heading">
+          ALL-DAY
+        </div>
+        <div class="default-toll-container">
+          <div class="tunnel-container">
+            <img class="add-minus-icon" id="WHC-minus" src="./asset/minus.svg" alt="Minus Icon"  />
+            <span id="WHCToll">$75</span>
+            <img class="add-minus-icon" id="WHC-plus" src="./asset/add.svg" alt="Add Icon"  />
+          </div>
+          <div class="tunnel-container">
+            <img class="add-minus-icon" id="CHT-minus" src="./asset/minus.svg" alt="Minus Icon"  />
+            <span id="CHTToll">$20</span>
+            <img class="add-minus-icon" id="CHT-plus" src="./asset/add.svg" alt="Add Icon"  />
+          </div>
+          <div class="tunnel-container">
+            <img class="add-minus-icon" id="EHC-minus" src="./asset/minus.svg" alt="Minus Icon"  />
+            <span id="EHCToll">$25</span>
+            <img class="add-minus-icon" id="EHC-plus" src="./asset/add.svg" alt="Add Icon"  />
+          </div>
+        </div>
+      </div>
+      <div class="free-toggle-container" id="free-toggle-container">
+        <input type="checkbox" id="free-toggle" />
+        <label for="free-toggle">Free</label>
+      </div>
+      <div class="peak-tolls-adj-container" id="peak-tolls-adj-container">
+        <button id="all-tolls-minus-5" class="peak-toll-adj-btn">-$5</button>
+        <button id="all-tolls-plus-5" class="peak-toll-adj-btn">+$5</button>
+      </div>
+      
+    </div>
+  </body>
+</html>
